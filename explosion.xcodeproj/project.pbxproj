@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		002EA9E920642E8700FFA6AE /* Sdl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 002EA9E720642E8700FFA6AE /* Sdl.cpp */; };
+		002EA9EC20642F1000FFA6AE /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 002EA9EA20642F1000FFA6AE /* Input.cpp */; };
+		002EA9EF20642F4B00FFA6AE /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 002EA9ED20642F4B00FFA6AE /* Sprite.cpp */; };
+		002EA9F220642F7B00FFA6AE /* Sops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 002EA9F020642F7B00FFA6AE /* Sops.cpp */; };
 		00BFB6AA20634C340058C04D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00BFB6A920634C340058C04D /* main.cpp */; };
 		00BFB6B220634C7A0058C04D /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00BFB6B120634C7A0058C04D /* SDL2.framework */; };
 /* End PBXBuildFile section */
@@ -24,6 +28,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		002EA9E720642E8700FFA6AE /* Sdl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sdl.cpp; sourceTree = "<group>"; };
+		002EA9E820642E8700FFA6AE /* Sdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sdl.h; sourceTree = "<group>"; };
+		002EA9EA20642F1000FFA6AE /* Input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Input.cpp; sourceTree = "<group>"; };
+		002EA9EB20642F1000FFA6AE /* Input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Input.h; sourceTree = "<group>"; };
+		002EA9ED20642F4B00FFA6AE /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
+		002EA9EE20642F4B00FFA6AE /* Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sprite.h; sourceTree = "<group>"; };
+		002EA9F020642F7B00FFA6AE /* Sops.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sops.cpp; sourceTree = "<group>"; };
+		002EA9F120642F7B00FFA6AE /* Sops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sops.h; sourceTree = "<group>"; };
 		00BFB6A620634C340058C04D /* explosion */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = explosion; sourceTree = BUILT_PRODUCTS_DIR; };
 		00BFB6A920634C340058C04D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		00BFB6B120634C7A0058C04D /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
@@ -62,6 +74,14 @@
 			isa = PBXGroup;
 			children = (
 				00BFB6A920634C340058C04D /* main.cpp */,
+				002EA9ED20642F4B00FFA6AE /* Sprite.cpp */,
+				002EA9F020642F7B00FFA6AE /* Sops.cpp */,
+				002EA9F120642F7B00FFA6AE /* Sops.h */,
+				002EA9EE20642F4B00FFA6AE /* Sprite.h */,
+				002EA9E720642E8700FFA6AE /* Sdl.cpp */,
+				002EA9E820642E8700FFA6AE /* Sdl.h */,
+				002EA9EA20642F1000FFA6AE /* Input.cpp */,
+				002EA9EB20642F1000FFA6AE /* Input.h */,
 			);
 			path = explosion;
 			sourceTree = "<group>";
@@ -131,7 +151,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				002EA9EC20642F1000FFA6AE /* Input.cpp in Sources */,
 				00BFB6AA20634C340058C04D /* main.cpp in Sources */,
+				002EA9EF20642F4B00FFA6AE /* Sprite.cpp in Sources */,
+				002EA9E920642E8700FFA6AE /* Sdl.cpp in Sources */,
+				002EA9F220642F7B00FFA6AE /* Sops.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
