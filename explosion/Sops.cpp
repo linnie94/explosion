@@ -10,17 +10,57 @@
 
 void Sops :: draw(const std::deque<Sprite>& sprites, Sdl& sdl)
 {
-    SDL_SetRenderDrawColor(sdl.renderer, 0, 0, 0, 0);
+    // Clear screen.
+    SDL_SetRenderDrawColor(sdl.renderer, 0x00, 0x00, 0x00, 0x00);
     SDL_RenderClear(sdl.renderer);
-    
+
+    // TODO:
+    // Have a look at the Explosion_Sprite.bmp in the art folder.
+    // See how each sprite frame is square. You can find the dimensions of the square
+    // by getting the height of hte entire image.
+    //
+    // From the surface you passed in:
+    //
+    //    int height = surface->h.
+    //
+    // Select the first frame of the surface sprite for the texture by building a rect:
+    //
+    //     SDL_Rect frame = { 0 * height, 0, height, height };
+    //
+    // To select the second frame, do:
+    //
+    //     SDL_Rect frame = { 1 * height, 0, height, height };
+    //
+    // To select the third frame, do:
+    //
+    //     SDL_Rect frame = { 2 * height, 0, height, height };
+    //
+
+    // Transfer all sprites.
     for(const auto& s : sprites)
     {
-        if(s.time < 180)
-        {
-            SDL_SetRenderDrawColor(sdl.renderer, s.time, 0, 255, 0);
-            SDL_RenderDrawRect(sdl.renderer, &s.rect);
-        }
+        // There are 12 frames in the sprite sheet. Our sprite timer expires at 60 seconds.
+        //
+        //     Thus, 60 / 5 == 12, and therefor, the above nicely becomes:
+        //
+        //     SDL_Rect frame = { (s.time / 5) * height, 0, height, height };
+        //
+        // You can then use SDL_RenderCopy() to transfer the frame rect above containing one frame of sprite data
+        // to the sprites rect location on the window from the deque.
+        //
+        // That is, instead of just plainly coloring rects and transferring them:
+        //
+        SDL_SetRenderDrawColor(sdl.renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+        SDL_RenderDrawRect(sdl.renderer, &s.rect);
+
+        // Do this instead:
+        //
+        // SDL_RenderCopy(sdl.renderer, texture, &frame, sprite.rect);
+        //
+        // This will transfer the sprite frame from the texture to the renderer at the sprite rect location.
     }
+
+    // Present sprites and wait some milliseconds.
     SDL_RenderPresent(sdl.renderer);
     SDL_Delay(10);
 }
@@ -28,20 +68,16 @@ void Sops :: draw(const std::deque<Sprite>& sprites, Sdl& sdl)
 void Sops :: update_timeouts(std::deque<Sprite>& sprites)
 {
     for(auto& s : sprites)
-    {
-        if(s.time < 180)
-            s.time++;
-    }
+        s.time++;
 }
 
 void Sops :: remove_timeouts(std::deque<Sprite>& sprites)
 {
-     if(sprites.size() > 0)
-     {
-         const int last = sprites.size() - 1;
-         if(sprites[last].time >= 180)
-         {
-             sprites.pop_back();
-         }
+    const int timeout = 60;
+    if(sprites.size() > 0)
+    {
+        const int last = sprites.size() - 1;
+        if(sprites[last].time >= 60)
+            sprites.pop_back();
     }
 }

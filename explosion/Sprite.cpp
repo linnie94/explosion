@@ -12,8 +12,8 @@ Sprite :: Sprite(int x, int y)
 {
     rect.x = x;
     rect.y = y;
-    rect.h = 10;
-    rect.w = 10;
+    rect.h = 100;
+    rect.w = 100;
     time = 0;
 }
 

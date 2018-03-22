@@ -13,59 +13,71 @@
 
 int main()
 {
-    
+    // TODO:
+    // Assign xres and yres to internal fields within SDL so we can access them as sdl.xres and sdl.yres later on.
     Sdl sdl(800, 400);
+
     std::deque<Sprite> sprites;
 
     // TODO:
-    // We are going to load the sprite sheet here.
-    // Another name for a sprite sheet is a surface.
-    // Sprite sheets live in RAM once they are loaded.
+    // Load the Explosion_Sprite.bmp into RAM using an SDL_Surface (I added the surface loading function to the Util namespace).
     //
-    // We only have one sprite sheet, so a deque is not necessary,
-    // but it is good practise because in the future our game will use
-    // many sprite sheets.
+    //      SDL_Surface* surface = Util::load(char* path, uint32_t r, uint32_t g, uint32_t b);
     //
-    //      std::deque<SDL_Surface*> surfaces;
+    //      For the path, use "art/Explosion_Sprites.bmp" in this folder.
+    //      For R,G,B, select the color that you want to be transparent when the sprites are copied to the window.
+    //      If you look at the sprite sheet, the background is black (0, 0, 0 for RGB) so use this.
     //
-    // Sprite sheets are useless in RAM. Transferring an image
-    // from RAM to a rect area on the screen is very slow, so all the
-    // sprite sheets must be converted and placed into graphics memory.
-    // Graphics memory is very fast when it comes to moving images
-    // to the screen.
+    // SDL_Surfaces are slow when copying to the window. Convert the SDL_Surface to an SDL_Texture so that it lives in Video Memory (VRAM).
     //
-    // These things are called textures.
+    //      SDL_Texture* texture = SDL_CreateTextureFromSurface(sdl.renderer, surface);
     //
-    //      std::deque<SDL_Texture*> textures;
+    // We will pass this texture and surface to Sops :: draw(...).
+    //
+    // We must pass in both the surface and texture because the surface contains width and height
+    // information of the sprite surface (as well as un-optimized memory data which we don't care about),
+    // and the texture contains the optimized video memory data we need for fast window transfer.
+
     while(true)
     {
         std::cout << sprites.size() << std::endl;
+
         Input input;
         if(input.done())
             break;
-        
+
+        // Left click.
         if(input.button == 1)
             sprites.push_front(Sprite(input.x, input.y));
-        
+
+        // TODO:
+        // On right click (when input.button == 4) don't use input.x and input.y and
+        // push to the front 10 sprites in random locations.
+        // You can randomize the x and y position of the sprite by doing:
+        //
+        // int x = std::rand() % sdl.xres;
+        // int y = std::rand() % sdl.yres;
+
         Sops :: update_timeouts(sprites);
 
         // TODO:
-        //
         // Timeouts must be removed before the sprites are drawn.
         //
-        // There are 18 frames for the explosion. We will draw:
+        // There are 12 frames for the explosion. We will draw:
         //
-        //   Frame  0 when time is   0 -  10 (not including 10).
-        //   Frame  1 when time is  10 -  20 (not including 20).
+        //   Frame  0 when time is   0 -  10 (not including  10).
+        //   Frame  1 when time is  10 -  20 (not including  20).
         //   ...
-        //   Frame 17 when time is 170 - 180 (not including 180).
+        //   Frame 11 when time is 110 - 120 (not including 120).
         //
-        // So if update_timeouts() is 180 at the back of the deque it must be removed.
+        // So if update_timeouts() is 120 at the back of the deque it must be removed.
         //
         // Swap the order of draw() and remove_timeouts().
-        
+
+        // TODO:
+        // Pass the Surface and Texture to this draw() function. Don't forget to add the function arguments to the .h file.
         Sops :: draw(sprites, sdl);
-        
+
         Sops :: remove_timeouts(sprites);
     }
 }
