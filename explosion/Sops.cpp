@@ -17,7 +17,7 @@ void Sops :: draw(const std::deque<Sprite>& sprites, Sdl& sdl)
     {
         if(s.time < 180)
         {
-            SDL_SetRenderDrawColor(sdl.renderer, s.time , 0, 255, 0);
+            SDL_SetRenderDrawColor(sdl.renderer, s.time, 0, 255, 0);
             SDL_RenderDrawRect(sdl.renderer, &s.rect);
         }
     }

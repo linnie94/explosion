@@ -16,6 +16,27 @@ int main()
     
     Sdl sdl(800, 400);
     std::deque<Sprite> sprites;
+
+    // TODO:
+    // We are going to load the sprite sheet here.
+    // Another name for a sprite sheet is a surface.
+    // Sprite sheets live in RAM once they are loaded.
+    //
+    // We only have one sprite sheet, so a deque is not necessary,
+    // but it is good practise because in the future our game will use
+    // many sprite sheets.
+    //
+    //      std::deque<SDL_Surface*> surfaces;
+    //
+    // Sprite sheets are useless in RAM. Transferring an image
+    // from RAM to a rect area on the screen is very slow, so all the
+    // sprite sheets must be converted and placed into graphics memory.
+    // Graphics memory is very fast when it comes to moving images
+    // to the screen.
+    //
+    // These things are called textures.
+    //
+    //      std::deque<SDL_Texture*> textures;
     while(true)
     {
         std::cout << sprites.size() << std::endl;

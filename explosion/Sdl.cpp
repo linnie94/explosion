@@ -15,6 +15,8 @@ Sdl :: Sdl(int xres, int yres)
     SDL_Init(SDL_INIT_VIDEO);
     SDL_CreateWindowAndRenderer(xres, yres, 0, &window, &renderer);
     if(window == NULL || renderer == NULL)
+    {
         std::cout << SDL_GetError() << std::endl;
+    }
 }
 
