@@ -14,7 +14,7 @@ Sprite :: Sprite(int x, int y)
     rect.y = y;
     rect.h = 10;
     rect.w = 10;
-    time = 255;
+    time = 0;
 }
 
 void Sprite :: speak() const

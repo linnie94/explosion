@@ -23,7 +23,7 @@ int main()
             break;
         
         if(input.button == 1)
-            sprites.push_back(Sprite(input.x, input.y));
+            sprites.push_front(Sprite(input.x, input.y));
         
         Sops :: update_timeouts(sprites);
         

@@ -73,15 +73,15 @@
 		00BFB6A820634C340058C04D /* explosion */ = {
 			isa = PBXGroup;
 			children = (
-				00BFB6A920634C340058C04D /* main.cpp */,
-				002EA9ED20642F4B00FFA6AE /* Sprite.cpp */,
-				002EA9F020642F7B00FFA6AE /* Sops.cpp */,
 				002EA9F120642F7B00FFA6AE /* Sops.h */,
+				002EA9F020642F7B00FFA6AE /* Sops.cpp */,
 				002EA9EE20642F4B00FFA6AE /* Sprite.h */,
-				002EA9E720642E8700FFA6AE /* Sdl.cpp */,
+				002EA9ED20642F4B00FFA6AE /* Sprite.cpp */,
 				002EA9E820642E8700FFA6AE /* Sdl.h */,
-				002EA9EA20642F1000FFA6AE /* Input.cpp */,
+				002EA9E720642E8700FFA6AE /* Sdl.cpp */,
 				002EA9EB20642F1000FFA6AE /* Input.h */,
+				002EA9EA20642F1000FFA6AE /* Input.cpp */,
+				00BFB6A920634C340058C04D /* main.cpp */,
 			);
 			path = explosion;
 			sourceTree = "<group>";
