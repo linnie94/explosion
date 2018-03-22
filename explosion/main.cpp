@@ -26,6 +26,21 @@ int main()
             sprites.push_front(Sprite(input.x, input.y));
         
         Sops :: update_timeouts(sprites);
+
+        // TODO:
+        //
+        // Timeouts must be removed before the sprites are drawn.
+        //
+        // There are 18 frames for the explosion. We will draw:
+        //
+        //   Frame  0 when time is   0 -  10 (not including 10).
+        //   Frame  1 when time is  10 -  20 (not including 20).
+        //   ...
+        //   Frame 17 when time is 170 - 180 (not including 180).
+        //
+        // So if update_timeouts() is 180 at the back of the deque it must be removed.
+        //
+        // Swap the order of draw() and remove_timeouts().
         
         Sops :: draw(sprites, sdl);
         
