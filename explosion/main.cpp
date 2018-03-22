@@ -13,6 +13,7 @@
 
 int main()
 {
+    
     Sdl sdl(800, 400);
     std::deque<Sprite> sprites;
     while(true)

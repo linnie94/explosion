@@ -36,22 +36,12 @@ void Sops :: update_timeouts(std::deque<Sprite>& sprites)
 
 void Sops :: remove_timeouts(std::deque<Sprite>& sprites)
 {
-    /*  TODO:
-     *  Sprites are pushed to the front so the highest incremented sprite
-     *  will be at the back. Pop from the back. */
-    // if(sprites.size() > 0)
-    // {
-    //     const int last = sprites.size() - 1;
-    //     if(sprites[last].time >= 180)
-    //     {
-    //         sprites.pop_back();
-    //     }
-    // }
-    if(sprites.size() > 0)
-    {
-        if(sprites[0].time >= 180)
-        {
-            sprites.pop_front();
-        }
+     if(sprites.size() > 0)
+     {
+         const int last = sprites.size() - 1;
+         if(sprites[last].time >= 180)
+         {
+             sprites.pop_back();
+         }
     }
 }
