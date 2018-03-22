@@ -74,10 +74,30 @@ void Sops :: update_timeouts(std::deque<Sprite>& sprites)
 void Sops :: remove_timeouts(std::deque<Sprite>& sprites)
 {
     const int timeout = 60;
+    // TODO:
+    // When you add many sprites at once to the screen in a single instance (like 100 at the same time)
+    // you will notice that this only removes one per frame update.
+    //
+    // That is, if we add 100 sprites at the same time with random locations like we do with right click,
+    // they will all timeout at the same time, but they will not be removed at the same time. One timeout will be removed per
+    // frame update. If we do 100 frame updates per second (due to SDL_Delay(10)) it will take almost a second to get rid of them all.
+    //
+    // To remove them all at once, instead of doing this:
     if(sprites.size() > 0)
     {
         const int last = sprites.size() - 1;
         if(sprites[last].time >= 60)
             sprites.pop_back();
     }
+
+    // Do this:
+    // while(sprites.size > 0)
+    // {
+    //     const int last = sprites.size() - 1;
+    //     if(sprites[last].time < 60)
+    //         break;
+    //     sprites.pop_back();
+    // }
+    //
+    // This will remove all timeouted sprites in one frame update.
 }
