@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "039C55DD5FC6E6C13A89E543286314AB18B43FB9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "039C55DD5FC6E6C13A89E543286314AB18B43FB9" : 9223372036854775807,
+    "CBC0FFDA4EA18E4C922C5294E199BA22E3BF55A8" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "26085ABD-75E0-4B7F-A47C-629268FB1DE2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "039C55DD5FC6E6C13A89E543286314AB18B43FB9" : "explosion\/",
+    "CBC0FFDA4EA18E4C922C5294E199BA22E3BF55A8" : "rects\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "explosion",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "explosion.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/linnie94\/explosion.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "039C55DD5FC6E6C13A89E543286314AB18B43FB9"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/linnie94\/rects.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CBC0FFDA4EA18E4C922C5294E199BA22E3BF55A8"
+    }
+  ]
+}
