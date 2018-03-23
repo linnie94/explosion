@@ -22,7 +22,7 @@ void Sops :: draw(const std::deque<Sprite>& sprites, Sdl& sdl , SDL_Surface* sur
     //
     // From the surface you passed in:
     //
-    int height = surface->h.
+    int height = surface->h;
     //
     // Select the first frame of the surface sprite for the texture by building a rect:
     //
@@ -56,11 +56,10 @@ void Sops :: draw(const std::deque<Sprite>& sprites, Sdl& sdl , SDL_Surface* sur
 
         // Do this instead:
         //
-<<<<<<< HEAD
-        SDL_RenderCopy(sdl.renderer, texture, &frame, sprite.rect);
-=======
-        // SDL_RenderCopy(sdl.renderer, texture, &frame, &s.rect);
->>>>>>> 3ab45952ce16093d582aa73bd41804484b759dd3
+
+
+        SDL_RenderCopy(sdl.renderer, texture, &frame, &s.rect);
+
         //
         //This will transfer the sprite frame from the texture to the renderer at the sprite rect location.
     }
