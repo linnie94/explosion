@@ -21,7 +21,7 @@ int main()
     // TODO:
     // Load the Explosion_Sprite.bmp into RAM using an SDL_Surface (I added the surface loading function to the Util namespace).
     //
-    const char* path = "art/Explosion_Sprites.bmp";
+    const char* path = "/users/hrsohn/Desktop/snakee/Projects/explosion/explosion/art/Explosion_Sprites.bmp";
     SDL_Surface* surface = Util::load(path, 0, 0, 0);
     //
     //      For the path, use "art/Explosion_Sprites.bmp" in this folder.

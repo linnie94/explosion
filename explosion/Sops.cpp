@@ -94,7 +94,7 @@ void Sops :: remove_timeouts(std::deque<Sprite>& sprites)
     // Do this:
     while(sprites.size() > 0)
     {
-        const int last = sprites.size() -1;
+        const int last = sprites.size() - 1;
         if(sprites[last].time < timeout)
             break;
         sprites.pop_back();
