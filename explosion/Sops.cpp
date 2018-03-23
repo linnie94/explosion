@@ -7,8 +7,9 @@
 //
 
 #include "Sops.h"
+#include "Util.h"
 
-void Sops :: draw(const std::deque<Sprite>& sprites, Sdl& sdl)
+void Sops :: draw(const std::deque<Sprite>& sprites, Sdl& sdl , SDL_Surface* surface, SDL_Texture* texture)
 {
     // Clear screen.
     SDL_SetRenderDrawColor(sdl.renderer, 0x00, 0x00, 0x00, 0x00);
@@ -21,7 +22,7 @@ void Sops :: draw(const std::deque<Sprite>& sprites, Sdl& sdl)
     //
     // From the surface you passed in:
     //
-    //    int height = surface->h.
+    int height = surface->h.
     //
     // Select the first frame of the surface sprite for the texture by building a rect:
     //
@@ -43,21 +44,21 @@ void Sops :: draw(const std::deque<Sprite>& sprites, Sdl& sdl)
         //
         //     Thus, 60 / 5 == 12, and therefor, the above nicely becomes:
         //
-        //     SDL_Rect frame = { (s.time / 5) * height, 0, height, height };
+        SDL_Rect frame = { (s.time / 5) * height, 0, height, height };
         //
         // You can then use SDL_RenderCopy() to transfer the frame rect above containing one frame of sprite data
         // to the sprites rect location on the window from the deque.
         //
         // That is, instead of just plainly coloring rects and transferring them:
         //
-        SDL_SetRenderDrawColor(sdl.renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-        SDL_RenderDrawRect(sdl.renderer, &s.rect);
+        //SDL_SetRenderDrawColor(sdl.renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+        //SDL_RenderDrawRect(sdl.renderer, &s.rect);
 
         // Do this instead:
         //
-        // SDL_RenderCopy(sdl.renderer, texture, &frame, sprite.rect);
+        SDL_RenderCopy(sdl.renderer, texture, &frame, sprite.rect);
         //
-        // This will transfer the sprite frame from the texture to the renderer at the sprite rect location.
+        //This will transfer the sprite frame from the texture to the renderer at the sprite rect location.
     }
 
     // Present sprites and wait some milliseconds.
@@ -83,21 +84,21 @@ void Sops :: remove_timeouts(std::deque<Sprite>& sprites)
     // frame update. If we do 100 frame updates per second (due to SDL_Delay(10)) it will take almost a second to get rid of them all.
     //
     // To remove them all at once, instead of doing this:
-    if(sprites.size() > 0)
-    {
-        const int last = sprites.size() - 1;
-        if(sprites[last].time >= 60)
-            sprites.pop_back();
-    }
+    //if(sprites.size() > 0)
+    //{
+    //    const int last = sprites.size() - 1;
+    //    if(sprites[last].time >= 60)
+    //        sprites.pop_back();
+    //}
 
     // Do this:
-    // while(sprites.size > 0)
-    // {
-    //     const int last = sprites.size() - 1;
-    //     if(sprites[last].time < 60)
-    //         break;
-    //     sprites.pop_back();
-    // }
-    //
+    while(sprites.size() > 0)
+    {
+        const int last = sprites.size() -1;
+        if(sprites[last].time < timeout)
+            break;
+        sprites.pop_back();
+     }
+    
     // This will remove all timeouted sprites in one frame update.
 }

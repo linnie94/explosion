@@ -13,7 +13,7 @@
 
 namespace Sops
 {
-    void draw(const std::deque<Sprite>& sprites, Sdl& sdl);
+    void draw(const std::deque<Sprite>& sprites, Sdl& sdl , SDL_Surface* surface, SDL_Texture* texture);
     
     void update_timeouts(std::deque<Sprite>& sprites);
     

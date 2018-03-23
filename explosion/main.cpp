@@ -10,19 +10,19 @@
 #include "Input.h"
 #include "Sprite.h"
 #include "Sops.h"
+#include "Util.h"
 
 int main()
 {
-    // TODO:
-    // Assign xres and yres to internal fields within SDL so we can access them as sdl.xres and sdl.yres later on.
-    Sdl sdl(800, 400);
+    Sdl sdl;
 
     std::deque<Sprite> sprites;
 
     // TODO:
     // Load the Explosion_Sprite.bmp into RAM using an SDL_Surface (I added the surface loading function to the Util namespace).
     //
-    //      SDL_Surface* surface = Util::load(char* path, uint32_t r, uint32_t g, uint32_t b);
+    const char* path = "art/Explosion_Sprites.bmp";
+    SDL_Surface* surface = Util::load(path, 0, 0, 0);
     //
     //      For the path, use "art/Explosion_Sprites.bmp" in this folder.
     //      For R,G,B, select the color that you want to be transparent when the sprites are copied to the window.
@@ -30,7 +30,7 @@ int main()
     //
     // SDL_Surfaces are slow when copying to the window. Convert the SDL_Surface to an SDL_Texture so that it lives in Video Memory (VRAM).
     //
-    //      SDL_Texture* texture = SDL_CreateTextureFromSurface(sdl.renderer, surface);
+    SDL_Texture* texture = SDL_CreateTextureFromSurface(sdl.renderer, surface);
     //
     // We will pass this texture and surface to Sops :: draw(...).
     //
@@ -49,14 +49,16 @@ int main()
         // Left click.
         if(input.button == 1)
             sprites.push_front(Sprite(input.x, input.y));
-
+        
         // TODO:
         // On right click (when input.button == 4) don't use input.x and input.y and
         // push to the front 10 sprites in random locations.
         // You can randomize the x and y position of the sprite by doing:
         //
-        // int x = std::rand() % sdl.xres;
-        // int y = std::rand() % sdl.yres;
+        int x = std::rand() % sdl.xres;
+        int y = std::rand() % sdl.yres;
+        if(input.button == 4)
+            sprites.push_front(Sprite(x, y));
 
         Sops :: update_timeouts(sprites);
 
@@ -76,7 +78,7 @@ int main()
 
         // TODO:
         // Pass the Surface and Texture to this draw() function. Don't forget to add the function arguments to the .h file.
-        Sops :: draw(sprites, sdl);
+        Sops :: draw(sprites, sdl, surface, texture);
 
         Sops :: remove_timeouts(sprites);
     }

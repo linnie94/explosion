@@ -1,15 +1,7 @@
-//
-//  Util.cpp
-//  explosion
-//
-//  Created by Lynn Hyerin Sohn on 2018-03-23.
-//  Copyright © 2018 Lynn Hyerin Sohn. All rights reserved.
-//
-
 #include "Util.h"
 
 // R,G,B specifies color key. The color key will not be shown when the image is transferred to the screen.
-SDL_Surface* Util::load(const char* path, uint32_t r, uint32_t g, uint32_t b)
+SDL_Surface* Util::load(char* path, uint32_t r, uint32_t g, uint32_t b)
 {
     // Loads surface from bmp image.
     SDL_Surface* bmp = SDL_LoadBMP(path);

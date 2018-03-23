@@ -12,6 +12,7 @@
 		002EA9EF20642F4B00FFA6AE /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 002EA9ED20642F4B00FFA6AE /* Sprite.cpp */; };
 		002EA9F220642F7B00FFA6AE /* Sops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 002EA9F020642F7B00FFA6AE /* Sops.cpp */; };
 		002EA9F4206435F800FFA6AE /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002EA9F3206435F800FFA6AE /* SDL2.framework */; };
+		002EA9FA2065A02A00FFA6AE /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 002EA9F82065A02A00FFA6AE /* Util.cpp */; };
 		00BFB6AA20634C340058C04D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00BFB6A920634C340058C04D /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,8 @@
 		002EA9F020642F7B00FFA6AE /* Sops.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sops.cpp; sourceTree = "<group>"; };
 		002EA9F120642F7B00FFA6AE /* Sops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sops.h; sourceTree = "<group>"; };
 		002EA9F3206435F800FFA6AE /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		002EA9F82065A02A00FFA6AE /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
+		002EA9F92065A02A00FFA6AE /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		00BFB6A620634C340058C04D /* explosion */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = explosion; sourceTree = BUILT_PRODUCTS_DIR; };
 		00BFB6A920634C340058C04D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +76,7 @@
 		00BFB6A820634C340058C04D /* explosion */ = {
 			isa = PBXGroup;
 			children = (
+				00BFB6A920634C340058C04D /* main.cpp */,
 				002EA9F120642F7B00FFA6AE /* Sops.h */,
 				002EA9F020642F7B00FFA6AE /* Sops.cpp */,
 				002EA9EE20642F4B00FFA6AE /* Sprite.h */,
@@ -81,7 +85,8 @@
 				002EA9E720642E8700FFA6AE /* Sdl.cpp */,
 				002EA9EB20642F1000FFA6AE /* Input.h */,
 				002EA9EA20642F1000FFA6AE /* Input.cpp */,
-				00BFB6A920634C340058C04D /* main.cpp */,
+				002EA9F82065A02A00FFA6AE /* Util.cpp */,
+				002EA9F92065A02A00FFA6AE /* Util.h */,
 			);
 			path = explosion;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 				002EA9EC20642F1000FFA6AE /* Input.cpp in Sources */,
 				00BFB6AA20634C340058C04D /* main.cpp in Sources */,
 				002EA9EF20642F4B00FFA6AE /* Sprite.cpp in Sources */,
+				002EA9FA2065A02A00FFA6AE /* Util.cpp in Sources */,
 				002EA9E920642E8700FFA6AE /* Sdl.cpp in Sources */,
 				002EA9F220642F7B00FFA6AE /* Sops.cpp in Sources */,
 			);
