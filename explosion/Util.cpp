@@ -17,8 +17,8 @@ SDL_Surface* Util::load(const char* path, uint32_t r, uint32_t g, uint32_t b)
     SDL_PixelFormat* allocation = SDL_AllocFormat(SDL_PIXELFORMAT_RGB888);
     SDL_Surface* converted = SDL_ConvertSurface(bmp, allocation, 0);
     // Frees old surface.
-    SDL_FreeFormat(allocation);
-    SDL_FreeSurface(bmp);
+    //SDL_FreeFormat(allocation);
+    //SDL_FreeSurface(bmp);
     // Applies color key to new surface.
     SDL_SetColorKey(converted, SDL_TRUE, SDL_MapRGB(converted->format, r, g, b));
     // Returns new surface.
