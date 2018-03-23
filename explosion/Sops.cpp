@@ -55,7 +55,7 @@ void Sops :: draw(const std::deque<Sprite>& sprites, Sdl& sdl)
 
         // Do this instead:
         //
-        // SDL_RenderCopy(sdl.renderer, texture, &frame, sprite.rect);
+        // SDL_RenderCopy(sdl.renderer, texture, &frame, &s.rect);
         //
         // This will transfer the sprite frame from the texture to the renderer at the sprite rect location.
     }
