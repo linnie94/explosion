@@ -10,7 +10,6 @@
 
 #include <iostream>
 
-// R,G,B specifies color key. The color key will not be shown when the image is transferred to the screen.
 SDL_Surface* Util::load(const char* path, uint32_t r, uint32_t g, uint32_t b)
 {
     // Loads surface from bmp image.

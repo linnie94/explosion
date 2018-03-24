@@ -13,7 +13,6 @@
 		002EA9F220642F7B00FFA6AE /* Sops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 002EA9F020642F7B00FFA6AE /* Sops.cpp */; };
 		002EA9F4206435F800FFA6AE /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002EA9F3206435F800FFA6AE /* SDL2.framework */; };
 		002EA9FB2065B24500FFA6AE /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 002EA9F82065A02A00FFA6AE /* Util.cpp */; };
-		002EA9FE2065B4EA00FFA6AE /* Explosion_Sprites.bmp in Frameworks */ = {isa = PBXBuildFile; fileRef = 002EA9FC2065B4B200FFA6AE /* Explosion_Sprites.bmp */; };
 		00BFB6AA20634C340058C04D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00BFB6A920634C340058C04D /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -41,9 +40,8 @@
 		002EA9F3206435F800FFA6AE /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		002EA9F82065A02A00FFA6AE /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
 		002EA9F92065A02A00FFA6AE /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
-		002EA9FC2065B4B200FFA6AE /* Explosion_Sprites.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = Explosion_Sprites.bmp; path = explosion/art/Explosion_Sprites.bmp; sourceTree = "<group>"; };
 		00BFB6A620634C340058C04D /* explosion */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = explosion; sourceTree = BUILT_PRODUCTS_DIR; };
-		00BFB6A920634C340058C04D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		00BFB6A920634C340058C04D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = explosion/main.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +49,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				002EA9FE2065B4EA00FFA6AE /* Explosion_Sprites.bmp in Frameworks */,
 				002EA9F4206435F800FFA6AE /* SDL2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,7 +59,6 @@
 		00BFB69D20634C340058C04D = {
 			isa = PBXGroup;
 			children = (
-				002EA9FC2065B4B200FFA6AE /* Explosion_Sprites.bmp */,
 				00BFB6A820634C340058C04D /* explosion */,
 				00BFB6A720634C340058C04D /* Products */,
 				00BFB6B020634C790058C04D /* Frameworks */,
@@ -129,6 +125,9 @@
 		00BFB69E20634C340058C04D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Lynn Hyerin Sohn";
 				TargetAttributes = {
