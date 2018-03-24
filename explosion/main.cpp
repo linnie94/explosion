@@ -14,15 +14,11 @@
 
 int main()
 {
-    Sdl sdl;
+    Sdl sdl(1024, 600);
 
     std::deque<Sprite> sprites;
     
-    // Path name will be different for each computer "explosion/art/Explosion_Sprites.bmp"
-   
-    const char* path = "../../../../../../../../Desktop/snakee/Projects/explosion/explosion/art/Explosion_Sprites.bmp";
-    //const char* path = "/users/hrsohn/Desktop/snakee/Projects/explosion/explosion/art/Explosion_Sprites.bmp";
-    SDL_Surface* surface = Util::load(path, 0, 0, 0);
+    SDL_Surface* surface = Util::load("art/Explosion_Sprites.bmp", 0, 0, 0);
     SDL_Texture* texture = SDL_CreateTextureFromSurface(sdl.renderer, surface);
     
     while(true)

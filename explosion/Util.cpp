@@ -10,8 +10,6 @@
 
 #include <iostream>
 
-<<<<<<< HEAD
-=======
 void Util::check(void* p)
 {
     if(p == NULL)
@@ -22,7 +20,6 @@ void Util::check(void* p)
 }
 
 // R,G,B specifies color key. The color key will not be shown when the image is transferred to the screen.
->>>>>>> ac6f76959f185a3c54931ed91fe599a68778b5f5
 SDL_Surface* Util::load(const char* path, uint32_t r, uint32_t g, uint32_t b)
 {
     // Loads surface from bmp image.

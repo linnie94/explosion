@@ -15,8 +15,7 @@ class Sdl
 public:
     SDL_Window* window;
     SDL_Renderer* renderer;
-    int xres = 1280;
-    int yres = 800;
-    
-    Sdl();
+    int xres;
+    int yres;
+    Sdl(int xres, int yres);
 };

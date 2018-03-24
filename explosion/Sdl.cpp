@@ -10,8 +10,10 @@
 
 #include <iostream>
 
-Sdl :: Sdl()
+Sdl :: Sdl(int xres, int yres)
 {
+    this->xres = xres;
+    this->yres = yres;
     SDL_Init(SDL_INIT_VIDEO);
     SDL_CreateWindowAndRenderer(xres, yres, 0, &window, &renderer);
     if(window == NULL || renderer == NULL)
