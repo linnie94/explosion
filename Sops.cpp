@@ -9,7 +9,7 @@
 #include "Sops.h"
 #include "Util.h"
 
-void Sops :: draw(const std::deque<Sprite>& sprites, Sdl& sdl , SDL_Surface* surface, SDL_Texture* texture)
+void Sops :: draw(const std::deque<Sprite>& sprites, Sdl& sdl, SDL_Surface* surface, SDL_Texture* texture)
 {
     // Clear screen.
     SDL_SetRenderDrawColor(sdl.renderer, 0x00, 0x00, 0x00, 0x00);
