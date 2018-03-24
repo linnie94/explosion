@@ -37,13 +37,11 @@ void Sops :: update_timeouts(std::deque<Sprite>& sprites)
 void Sops :: remove_timeouts(std::deque<Sprite>& sprites)
 {
     const int timeout = 36;
-        while(sprites.size() > 0)
+    while(sprites.size() > 0)
     {
         const int last = sprites.size() - 1;
         if(sprites[last].time < timeout)
             break;
         sprites.pop_back();
-     }
-    
-    // This will remove all timeouted sprites in one frame update.
+    }
 }
