@@ -20,7 +20,7 @@ void Sops :: draw(const std::deque<Sprite>& sprites, Sdl& sdl , SDL_Surface* sur
     // Transfer all sprites.
     for(const auto& s : sprites)
     {
-        SDL_Rect frame = { (s.time / 5) * height, 0, height, height };
+        SDL_Rect frame = { (s.time / 3) * height, 0, height, height };
         SDL_RenderCopy(sdl.renderer, texture, &frame, &s.rect);
     }
 
@@ -36,7 +36,7 @@ void Sops :: update_timeouts(std::deque<Sprite>& sprites)
 
 void Sops :: remove_timeouts(std::deque<Sprite>& sprites)
 {
-    const int timeout = 60;
+    const int timeout = 36;
         while(sprites.size() > 0)
     {
         const int last = sprites.size() - 1;
