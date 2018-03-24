@@ -11,5 +11,6 @@
 
 namespace Util
 {
+    void check(void* p);
     SDL_Surface* load(const char* path, uint32_t r, uint32_t g, uint32_t b);
 };
