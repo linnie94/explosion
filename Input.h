@@ -10,7 +10,6 @@
 
 #include "Sdl.h"
 
-
 class Input
 {
 public:
