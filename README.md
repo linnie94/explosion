@@ -1,5 +1,7 @@
 # Explosions
 
+![]("art/epeek.gif")
+
 Just do:
 
     make; ./explosion

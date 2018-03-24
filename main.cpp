@@ -23,8 +23,6 @@ int main()
     
     while(true)
     {
-        std::cout << sprites.size() << std::endl;
-
         Input input;
         if(input.done())
             break;
