@@ -1,6 +1,6 @@
 # Explosions
 
-![]("art/epeek.gif")
+![](art/epeek.gif)
 
 Just do:
 
