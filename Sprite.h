@@ -16,7 +16,8 @@ class Sprite
 public:
     SDL_Rect rect;
     int time;
-    
+    int frames;
+    int stretch;
     Sprite(int x, int y);
     void speak() const;
 };

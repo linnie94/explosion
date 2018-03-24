@@ -15,6 +15,8 @@ Sprite :: Sprite(int x, int y)
     rect.h = 100;
     rect.w = 100;
     time = 0;
+    frames = 12;
+    stretch = 3;
 }
 
 void Sprite :: speak() const
