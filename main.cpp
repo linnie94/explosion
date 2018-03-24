@@ -34,10 +34,12 @@ int main()
             sprites.push_front(Sprite(input.x, input.y));
         
         // Right click.
-        int x = std::rand() % sdl.xres;
-        int y = std::rand() % sdl.yres;
         if(input.button == 4)
+        {
+            int x = std::rand() % sdl.xres;
+            int y = std::rand() % sdl.yres;
             sprites.push_front(Sprite(x, y));
+        }
 
         Sops :: draw(sprites, sdl, surface, texture);
         
