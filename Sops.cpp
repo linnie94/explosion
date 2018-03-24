@@ -26,7 +26,6 @@ void Sops :: draw(const std::deque<Sprite>& sprites, Sdl& sdl , SDL_Surface* sur
 
     // Present sprites and wait some milliseconds.
     SDL_RenderPresent(sdl.renderer);
-    SDL_Delay(10);
 }
 
 void Sops :: update_timeouts(std::deque<Sprite>& sprites)

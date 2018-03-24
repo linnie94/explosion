@@ -44,5 +44,7 @@ int main()
         Sops :: update_timeouts(sprites);
         
         Sops :: remove_timeouts(sprites);
+
+        SDL_Delay(15);
     }
 }
