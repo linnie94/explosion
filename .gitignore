@@ -1,3 +1,4 @@
 explosion
 *.DS_Store
 *.o
+*.d
